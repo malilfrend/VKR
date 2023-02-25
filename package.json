@@ -1,0 +1,8 @@
+{
+  "name": "Diplom",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Aleksey Chebykin",
+  "license": "MIT",
+  "private": true
+}
