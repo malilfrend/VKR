@@ -1,9 +1,9 @@
 import React from 'react';
 import {Routes, Route} from 'react-router-dom';
-import {Header} from "./core/Header/Header";
+import {Header} from './core/Header/Header';
+import {MainPage} from './core/MainPage/MainPage';
 
 import './styles/index.scss';
-import {MainPage} from "./core/MainPage/MainPage";
 
 function App() {
     return (
