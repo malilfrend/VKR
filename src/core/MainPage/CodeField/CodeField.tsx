@@ -4,24 +4,31 @@ import { useTasksStore } from '../../../store/tasksStore';
 
 export const CodeField = () => {
   const currentTask = useTasksStore((state) => state.getCurrentTask());
-  const [code, setCode] = useState('function add(a, b) {\n  return a + b;\n}')
+  const currentTaskId = useTasksStore((state) => state.currentTask);
+  const [code, setCode] = useState('def myFunc() {\n' +
+    '  print("Hello world")\n' +
+    '}');
   return (
-    <div>
-      <h4>{currentTask?.title}</h4>
-      <p>{currentTask?.description}</p>
+    currentTaskId
+      ?
       <div>
-        <CodeEditor
-          value={code}
-          onChange={(env) => setCode(env.target.value)}
-          language='python'
-          placeholder='Please enter your python code'
-          padding={15}
-          minHeight={500}
-          style={{
-            fontSize: 20
-          }}
-        />
+        <h4>{currentTask?.title}</h4>
+        <p>{currentTask?.description}</p>
+        <div>
+          <CodeEditor
+            value={code}
+            onChange={(env) => setCode(env.target.value)}
+            language='python'
+            placeholder='Please enter your python code'
+            padding={15}
+            minHeight={300}
+            style={{
+              fontSize: 16,
+            }}
+          />
+        </div>
       </div>
-    </div>
+      :
+      null
   );
 };
