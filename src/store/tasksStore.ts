@@ -40,6 +40,69 @@ export const useTasksStore = create<ITasksStore>((set, get) => ({
         'So, if we are to start our Tribonacci sequence with [1, 1, 1] as a starting input (AKA signature), we have this sequence',
       id: 23000005,
     },
+    {
+      title: 'Task 4',
+      description: 'Well met with Fibonacci bigger brother, AKA Tribonacci.\n' +
+        '\n' +
+        'As the name may already reveal, it works basically like a Fibonacci, but summing the last 3 (instead of 2) numbers of the sequence to generate the next. And, worse part of it, regrettably I won\'t get to hear non-native Italian speakers trying to pronounce it :(\n' +
+        '\n' +
+        'So, if we are to start our Tribonacci sequence with [1, 1, 1] as a starting input (AKA signature), we have this sequence',
+      id: 23000005,
+    },
+    {
+      title: 'Task 4',
+      description: 'Well met with Fibonacci bigger brother, AKA Tribonacci.\n' +
+        '\n' +
+        'As the name may already reveal, it works basically like a Fibonacci, but summing the last 3 (instead of 2) numbers of the sequence to generate the next. And, worse part of it, regrettably I won\'t get to hear non-native Italian speakers trying to pronounce it :(\n' +
+        '\n' +
+        'So, if we are to start our Tribonacci sequence with [1, 1, 1] as a starting input (AKA signature), we have this sequence',
+      id: 23000005,
+    },
+    {
+      title: 'Task 4',
+      description: 'Well met with Fibonacci bigger brother, AKA Tribonacci.\n' +
+        '\n' +
+        'As the name may already reveal, it works basically like a Fibonacci, but summing the last 3 (instead of 2) numbers of the sequence to generate the next. And, worse part of it, regrettably I won\'t get to hear non-native Italian speakers trying to pronounce it :(\n' +
+        '\n' +
+        'So, if we are to start our Tribonacci sequence with [1, 1, 1] as a starting input (AKA signature), we have this sequence',
+      id: 23000005,
+    },
+    {
+      title: 'Task 4',
+      description: 'Well met with Fibonacci bigger brother, AKA Tribonacci.\n' +
+        '\n' +
+        'As the name may already reveal, it works basically like a Fibonacci, but summing the last 3 (instead of 2) numbers of the sequence to generate the next. And, worse part of it, regrettably I won\'t get to hear non-native Italian speakers trying to pronounce it :(\n' +
+        '\n' +
+        'So, if we are to start our Tribonacci sequence with [1, 1, 1] as a starting input (AKA signature), we have this sequence',
+      id: 23000005,
+    },
+    {
+      title: 'Task 4',
+      description: 'Well met with Fibonacci bigger brother, AKA Tribonacci.\n' +
+        '\n' +
+        'As the name may already reveal, it works basically like a Fibonacci, but summing the last 3 (instead of 2) numbers of the sequence to generate the next. And, worse part of it, regrettably I won\'t get to hear non-native Italian speakers trying to pronounce it :(\n' +
+        '\n' +
+        'So, if we are to start our Tribonacci sequence with [1, 1, 1] as a starting input (AKA signature), we have this sequence',
+      id: 23000005,
+    },
+    {
+      title: 'Task 4',
+      description: 'Well met with Fibonacci bigger brother, AKA Tribonacci.\n' +
+        '\n' +
+        'As the name may already reveal, it works basically like a Fibonacci, but summing the last 3 (instead of 2) numbers of the sequence to generate the next. And, worse part of it, regrettably I won\'t get to hear non-native Italian speakers trying to pronounce it :(\n' +
+        '\n' +
+        'So, if we are to start our Tribonacci sequence with [1, 1, 1] as a starting input (AKA signature), we have this sequence',
+      id: 23000005,
+    },
+    {
+      title: 'Task 4',
+      description: 'Well met with Fibonacci bigger brother, AKA Tribonacci.\n' +
+        '\n' +
+        'As the name may already reveal, it works basically like a Fibonacci, but summing the last 3 (instead of 2) numbers of the sequence to generate the next. And, worse part of it, regrettably I won\'t get to hear non-native Italian speakers trying to pronounce it :(\n' +
+        '\n' +
+        'So, if we are to start our Tribonacci sequence with [1, 1, 1] as a starting input (AKA signature), we have this sequence',
+      id: 23000005,
+    },
   ],
   currentTask: 0,
   setCurrentTask: (id) => set(() => ({ currentTask: id })),

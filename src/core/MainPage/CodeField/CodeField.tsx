@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
+import Button from '@mui/material/Button';
 import CodeEditor from '@uiw/react-textarea-code-editor';
 import { useTasksStore } from '../../../store/tasksStore';
+import s from './CodeField.module.scss';
 
 export const CodeField = () => {
   const currentTask = useTasksStore((state) => state.getCurrentTask());
@@ -14,7 +16,7 @@ export const CodeField = () => {
       <div>
         <h4>{currentTask?.title}</h4>
         <p>{currentTask?.description}</p>
-        <div>
+        <div className={s.codeEditor}>
           <CodeEditor
             value={code}
             onChange={(env) => setCode(env.target.value)}
@@ -26,6 +28,9 @@ export const CodeField = () => {
               fontSize: 16,
             }}
           />
+          <Button variant='contained'>
+            Отправить на проверку
+          </Button>
         </div>
       </div>
       :
