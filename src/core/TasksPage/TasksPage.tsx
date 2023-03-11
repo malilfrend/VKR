@@ -1,10 +1,12 @@
 import React from 'react';
+
 import { TaskCard } from './TaskCard/TaskCard';
-import { CodeField } from './CodeField/CodeField';
-import s from './MainPage.module.scss';
+
+import s from './TasksPage.module.scss';
+
 import { useTasksStore } from '../../store/tasksStore';
 
-export const MainPage = () => {
+export const TasksPage = () => {
   const { tasks, setCurrentTask } = useTasksStore((state) => state);
 
   return (
@@ -16,7 +18,6 @@ export const MainPage = () => {
           );
         })}
       </div>
-      <CodeField />
     </div>
   );
 };

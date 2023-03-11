@@ -1,0 +1,20 @@
+.codeEditor {
+  display: flex;
+  flex-direction: column;
+  & :first-child {
+    margin-bottom: 16px;
+  }
+}
+
+.wrapper {
+  max-width: 1200px;
+  margin: auto;
+  padding: 24px 0;
+}
+
+.task {
+  margin: 0 0 16px;
+  & > h4 {
+    margin-bottom: 8px;
+  }
+}
