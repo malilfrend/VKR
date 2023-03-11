@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import Button from '@mui/material/Button';
+import Button from '@mui/joy/Button';
 import CodeEditor from '@uiw/react-textarea-code-editor';
 
 import { useTasksStore } from '../../store/tasksStore';
@@ -9,7 +9,6 @@ import s from './CodeField.module.scss';
 
 export const CodeField = () => {
   const currentTask = useTasksStore((state) => state.getCurrentTask());
-  const currentTaskId = useTasksStore((state) => state.currentTask);
   const [code, setCode] = useState('def myFunc() {\n' +
     '  print("Hello world")\n' +
     '}');
@@ -31,7 +30,7 @@ export const CodeField = () => {
             fontSize: 16,
           }}
         />
-        <Button variant='contained' size='small'>
+        <Button variant='soft'>
           Отправить на проверку
         </Button>
       </div>

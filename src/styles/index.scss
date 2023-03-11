@@ -1,4 +1,5 @@
 @import '~normalize.css';
+@import '@fontsource/public-sans';
 body {
   margin: 0;
   background-color: #262729;
@@ -14,8 +15,14 @@ code {
     monospace;
 }
 * {
+  color: white;
   padding: 0;
   margin: 0;
+}
+input {
+  color: inherit;
+  font-family: inherit;
+  font-size: inherit;
 }
 ul {
   list-style: none;
