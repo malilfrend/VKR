@@ -2,6 +2,7 @@ import React from 'react';
 import s from './Header.module.scss';
 import { useAuthStore } from '../../store/authStore';
 import { NavLink } from 'react-router-dom';
+import {tabs} from './tabs/tabs';
 
 export const Header = () => {
   const { isAuth, name, lastName, group } = useAuthStore((state) => state);
@@ -9,6 +10,9 @@ export const Header = () => {
     <div className={s.wrapper}>
       <div className={s.container}>
         <h4>Кафедра ЭПУ</h4>
+        <div className={s.tabs}>
+          { tabs.map((tab) => <NavLink to={`/${tab.url}`} key={tab.name}>{tab.name}</NavLink>) }
+        </div>
         <div>
           {
             isAuth ?
