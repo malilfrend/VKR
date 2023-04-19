@@ -1,7 +1,10 @@
+@import '../../styles/variables.scss';
+
 .wrapper {
   width: 100%;
   height: 64px;
-  background-color: #121216;
+  background-color: $back-ground-color-second;
+  border-bottom: 1px solid $text-color;
 }
 
 .container {
@@ -14,7 +17,7 @@
 }
 
 .tabs {
-  & > a {
+  &>a {
     margin-right: 16px;
   }
 }
