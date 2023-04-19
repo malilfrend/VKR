@@ -1,5 +1,6 @@
 import { create } from 'zustand';
-import { TTask } from '../types/TaskTypes';
+
+import { type TTask } from '../types/TaskTypes';
 
 interface ITasksStore {
   tasks: TTask[],
@@ -105,6 +106,6 @@ export const useTasksStore = create<ITasksStore>((set, get) => ({
     },
   ],
   currentTask: 0,
-  setCurrentTask: (id) => set(() => ({ currentTask: id })),
+  setCurrentTask: (id) => { set(() => ({ currentTask: id })); },
   getCurrentTask: () => get().tasks.find((item) => item.id === get().currentTask),
 }));
