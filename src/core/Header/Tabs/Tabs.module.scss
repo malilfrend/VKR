@@ -1,0 +1,12 @@
+@import '../../../styles/variables.scss';
+
+.tabs {
+  &>a {
+    margin-right: 16px;
+    @include nav-link
+  }
+}
+
+.active {
+  background-color: $active-color;
+}

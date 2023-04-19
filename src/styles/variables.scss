@@ -1,3 +1,17 @@
 $back-ground-color: rgb(233, 233, 233);
 $back-ground-color-second: rgb(199, 199, 199);
 $text-color: black;
+$hover-color: azure;
+$active-color: lightblue;
+
+@mixin nav-link {
+  padding: 5px;
+  transition: all .3s;
+  border-radius: 5px;
+
+  &:hover {
+    background-color: $hover-color;
+  }
+}
+
+;
