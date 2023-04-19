@@ -12,9 +12,10 @@ export const CodeField = ({ isPageCheckCode }: { isPageCheckCode: boolean }) => 
   const currentTask = useTasksStore((state) => state.getCurrentTask());
   // eslint-disable-next-line no-useless-concat
   const [code, setCode] = useState('def myFunc() {\n' + '  print("Hello world")\n' + '}');
+
   return (
     <div className={s.wrapper}>
-      {isPageCheckCode && (
+      {!isPageCheckCode && (
         <div className={s.task}>
           <h4>{currentTask?.title}</h4>
           <p>{currentTask?.description}</p>
@@ -28,7 +29,7 @@ export const CodeField = ({ isPageCheckCode }: { isPageCheckCode: boolean }) => 
           }}
           language="python"
           placeholder="Please enter your code"
-          padding={15}
+          padding={16}
           minHeight={300}
           style={{
             fontSize: 16,
