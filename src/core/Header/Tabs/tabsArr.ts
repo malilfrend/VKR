@@ -1,4 +1,4 @@
-export const tabs = [
+export const tabsArr = [
   {
     name: 'Главная',
     url: '',
