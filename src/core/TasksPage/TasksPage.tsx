@@ -12,11 +12,9 @@ export const TasksPage = () => {
   return (
     <div className={s.wrapper}>
       <div className={s.listOfTasks}>
-        {tasks.map((item) => {
-          return (
-            <TaskCard {...{ setCurrentTask, ...item }} key={item.id} />
-          );
-        })}
+        {tasks.map((item) => (
+          <TaskCard {...{ setCurrentTask, ...item }} key={item.id} />
+        ))}
       </div>
     </div>
   );

@@ -5,11 +5,9 @@ import { Main } from './core/Main/Main';
 
 import './styles/index.scss';
 
-
 function App() {
-
   return (
-    <div className='wrapper'>
+    <div className="wrapper">
       <Header />
       <Main />
     </div>

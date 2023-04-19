@@ -1,16 +1,47 @@
 module.exports = {
+  parser: '@typescript-eslint/parser',
   env: {
     browser: true,
     es2021: true,
   },
-  extends: ['plugin:react/recommended', 'standard-with-typescript', 'prettier'],
-  overrides: [],
+  extends: ['airbnb', 'prettier', 'plugin:@typescript-eslint/recommended'],
+  overrides: [
+    {
+      files: ['*.style.*', '*.styles.*'],
+      rules: {
+        'no-magic-numbers': 'off',
+      },
+    },
+    {
+      files: ['*.json'],
+      rules: {
+        'no-unused-expressions': 'off',
+      },
+    },
+    {
+      files: ['*.tsx', '*.ts'],
+      rules: {
+        'react/jsx-filename-extension': [
+          2,
+          {
+            extensions: ['.tsx', '.ts', '.jsx', '.js'],
+          },
+        ],
+      },
+    },
+    {
+      files: ['*.jsx'],
+      parserOptions: {
+        ecmaFeatures: {
+          jsx: true,
+        },
+      },
+    },
+  ],
   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: './tsconfig.json',
+    ecmaVersion: 2019,
   },
-  plugins: ['react'],
+  plugins: ['@typescript-eslint', 'import', 'react', 'react-hooks', 'jsx-a11y', 'prettier'],
   settings: {
     'import/resolver': {
       node: {
@@ -24,6 +55,13 @@ module.exports = {
     },
   },
   rules: {
+    curly: 1,
+    camelcase: [
+      0,
+      {
+        allow: ['^SupportOfferRequest_'],
+      },
+    ],
     '@typescript-eslint/ban-ts-comment': 'off',
     'spaced-comment': 'off',
     'import/extensions': ['error', 'never'],
@@ -47,11 +85,24 @@ module.exports = {
       },
     ],
     'react/require-default-props': 'off',
+    'react/function-component-definition': 'off',
     'react/jsx-props-no-spreading': 0,
     'react/prop-types': 0,
     'react/no-did-mount-set-state': 1,
     'react/no-did-update-set-state': 1,
     'react/no-array-index-key': 1,
+    'prettier/prettier': [
+      2,
+      {
+        useTabs: false,
+        tabWidth: 2,
+        singleQuote: true,
+        semi: true,
+        printWidth: 120,
+        trailingComma: 'all',
+        proseWrap: 'never',
+      },
+    ],
     '@typescript-eslint/no-shadow': ['error'],
     '@typescript-eslint/no-use-before-define': ['error'],
     '@typescript-eslint/no-unused-vars': 1,

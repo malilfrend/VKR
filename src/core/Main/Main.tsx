@@ -14,10 +14,10 @@ export const Main = () => {
   return (
     <div className={s.container}>
       <Routes>
-        <Route path={'/login'} element={<Login />} />
-        <Route path={'/tasks'} element={<TasksPage />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/tasks" element={<TasksPage />} />
         <Route path={`/task/${currentTask}`} element={<CodeFieldComp />} />
-        <Route path={'/check_code'} element={<CodeFieldComp />} />
+        <Route path="/check_code" element={<CodeFieldComp />} />
       </Routes>
     </div>
   );

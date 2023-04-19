@@ -11,4 +11,4 @@ export const useAuthStore = create<IAuthStore>((set, get) => ({
   name: 'student',
   lastName: 'studentov',
   group: 9202,
-}))
+}));

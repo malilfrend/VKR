@@ -1,33 +1,42 @@
 import React, { useEffect } from 'react';
-import { useForm, type SubmitHandler, Controller } from 'react-hook-form';
+import { useForm, SubmitHandler, Controller } from 'react-hook-form';
 import * as yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
 
 import Button from '@mui/joy/Button';
 
-import s from './Login.module.scss';
 import FormControl from '@mui/joy/FormControl';
 import FormLabel from '@mui/joy/FormLabel';
 import Input from '@mui/joy/Input';
-
+import s from './Login.module.scss';
 
 interface IFormData {
   login: string;
   password: string;
-};
+}
 
-const schema = yup.object({
-  login: yup.string().required(),
-  password: yup.string().required(),
-}).required();
+const schema = yup
+  .object({
+    login: yup.string().required(),
+    password: yup.string().required(),
+  })
+  .required();
 
 export const Login = () => {
-  const { register, unregister, handleSubmit, watch, trigger, control, formState: { errors } } = useForm<IFormData>({
+  const {
+    register,
+    unregister,
+    handleSubmit,
+    watch,
+    trigger,
+    control,
+    formState: { errors },
+  } = useForm<IFormData>({
     resolver: yupResolver(schema),
     defaultValues: {
       login: '',
       password: '',
-    }
+    },
   });
   useEffect(() => {
     register('login');
@@ -37,19 +46,19 @@ export const Login = () => {
       unregister('password');
     };
   }, []);
-  const onSubmit: SubmitHandler<IFormData> = data => console.log(data);
+  const onSubmit: SubmitHandler<IFormData> = (data) => console.log(data);
   return (
     <div className={s.wrapper}>
       <form onSubmit={handleSubmit(onSubmit)} className={s.form}>
         <Controller
-          name='login'
+          name="login"
           control={control}
-          render={({ field: { onChange, value}}) => (
+          render={({ field: { onChange, value } }) => (
             <FormControl>
               <FormLabel className={s.label}>Логин</FormLabel>
               <Input
-                type='login'
-                placeholder='Введите логин'
+                type="login"
+                placeholder="Введите логин"
                 className={s.input}
                 onChange={onChange}
                 value={value}
@@ -59,14 +68,14 @@ export const Login = () => {
           )}
         />
         <Controller
-          name='password'
+          name="password"
           control={control}
-          render={({ field: { onChange, value}}) => (
+          render={({ field: { onChange, value } }) => (
             <FormControl>
               <FormLabel className={s.label}>Пароль</FormLabel>
               <Input
-                type='password'
-                placeholder='Введите пароль'
+                type="password"
+                placeholder="Введите пароль"
                 className={s.input}
                 onChange={onChange}
                 value={value}
@@ -75,7 +84,7 @@ export const Login = () => {
             </FormControl>
           )}
         />
-        <Button variant='soft' type='submit'>
+        <Button variant="soft" type="submit">
           Войти
         </Button>
       </form>

@@ -7,22 +7,25 @@ import { useTasksStore } from '../../store/tasksStore';
 
 import s from './CodeField.module.scss';
 import { isCheckCode } from '../../hoc/isCheckCode';
-//@ts-expect-error
-export const CodeField = (params) => {
-  console.log(params);
 
+export const CodeField = ({ isPageCheckCode }: { isPageCheckCode: boolean }) => {
   const currentTask = useTasksStore((state) => state.getCurrentTask());
+  // eslint-disable-next-line no-useless-concat
   const [code, setCode] = useState('def myFunc() {\n' + '  print("Hello world")\n' + '}');
   return (
     <div className={s.wrapper}>
-      <div className={s.task}>
-        <h4>{currentTask?.title}</h4>
-        <p>{currentTask?.description}</p>
-      </div>
+      {isPageCheckCode && (
+        <div className={s.task}>
+          <h4>{currentTask?.title}</h4>
+          <p>{currentTask?.description}</p>
+        </div>
+      )}
       <div className={s.codeEditor}>
         <CodeEditor
           value={code}
-          onChange={(env) => { setCode(env.target.value); }}
+          onChange={(env) => {
+            setCode(env.target.value);
+          }}
           language="python"
           placeholder="Please enter your code"
           padding={15}
@@ -30,6 +33,7 @@ export const CodeField = (params) => {
           style={{
             fontSize: 16,
           }}
+          data-color-mode="light"
         />
         <Button variant="soft">Отправить на проверку</Button>
       </div>
@@ -38,17 +42,3 @@ export const CodeField = (params) => {
 };
 
 export const CodeFieldComp = isCheckCode(CodeField);
-
-// import React from 'react';
-// import { useParams } from 'react-router-dom';
-
-// function withRouter(Component) {
-//   function ComponentWithRouterProp(props) {
-//     let { userId } = useParams();
-//     return <Component {...props} userId={userId} />;
-//   }
-
-//   return ComponentWithRouterProp;
-// }
-
-// export default withRouter;
