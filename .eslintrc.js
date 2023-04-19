@@ -103,6 +103,7 @@ module.exports = {
         proseWrap: 'never',
       },
     ],
+    'import/no-useless-path-segments': 'off',
     '@typescript-eslint/no-shadow': ['error'],
     '@typescript-eslint/no-use-before-define': ['error'],
     '@typescript-eslint/no-unused-vars': 1,
