@@ -12,107 +12,32 @@ interface ITasksStore {
 export const useTasksStore = create<ITasksStore>((set, get) => ({
   tasks: [
     {
-      title: 'Task 1',
-      description:
-        'A pangram is a sentence that contains every single letter of the alphabet at least once. For example, the sentence "The quick brown fox jumps over the lazy dog" is a pangram, because it uses the letters A-Z at least once (case is irrelevant).\n' +
-        '\n' +
-        'Given a string, detect whether or not it is a pangram. Return True if it is, False if not. Ignore numbers and punctuation.',
+      title: 'Задача 1',
+      description: 'Даны два целых числа A и B (при этом A ≤ B). Выведите все числа от A до B включительно.',
       id: 1213131,
     },
     {
-      title: 'Task 2',
-      description: 'Given a rectangular box as string, of any size, made up of rows of #s',
+      title: 'Задача 2',
+      description:
+        'Дано несколько чисел. Вычислите их сумму. Сначала вводите количество чисел N, затем вводится ровно N целых чисел. Какое наименьшее число переменных нужно для решения этой задачи?',
       id: 235235125,
     },
     {
-      title: 'Task 3',
+      title: 'Задача 3',
       description:
-        'Mr.Right always tell the truth, Mr.Wrong always tell the lies.\n' +
-        '\n' +
-        'Some people are queuing to buy movie tickets, and one of them is Mr.Wrong. Please judge who is Mr.Wrong according to their conversation.\n' +
-        '\n' +
-        '[[Input]] A string array: conversation',
+        'Дано N чисел: сначала вводится число N, затем вводится ровно N целых чисел. Подсчитайте количество нулей среди введенных чисел и выведите это количество. Вам нужно подсчитать количество чисел, равных нулю, а не количество цифр.',
       id: 23598,
     },
     {
-      title: 'Task 4',
-      description:
-        'Well met with Fibonacci bigger brother, AKA Tribonacci.\n' +
-        '\n' +
-        "As the name may already reveal, it works basically like a Fibonacci, but summing the last 3 (instead of 2) numbers of the sequence to generate the next. And, worse part of it, regrettably I won't get to hear non-native Italian speakers trying to pronounce it :(\n" +
-        '\n' +
-        'So, if we are to start our Tribonacci sequence with [1, 1, 1] as a starting input (AKA signature), we have this sequence',
+      title: 'Задача 4',
+      description: 'Дано целое число, не меньшее 2. Выведите его наименьший натуральный делитель, отличный от 1.',
       id: 23000005,
     },
     {
-      title: 'Task 4',
+      title: 'Задача 5',
       description:
-        'Well met with Fibonacci bigger brother, AKA Tribonacci.\n' +
-        '\n' +
-        "As the name may already reveal, it works basically like a Fibonacci, but summing the last 3 (instead of 2) numbers of the sequence to generate the next. And, worse part of it, regrettably I won't get to hear non-native Italian speakers trying to pronounce it :(\n" +
-        '\n' +
-        'So, if we are to start our Tribonacci sequence with [1, 1, 1] as a starting input (AKA signature), we have this sequence',
-      id: 23000005,
-    },
-    {
-      title: 'Task 4',
-      description:
-        'Well met with Fibonacci bigger brother, AKA Tribonacci.\n' +
-        '\n' +
-        "As the name may already reveal, it works basically like a Fibonacci, but summing the last 3 (instead of 2) numbers of the sequence to generate the next. And, worse part of it, regrettably I won't get to hear non-native Italian speakers trying to pronounce it :(\n" +
-        '\n' +
-        'So, if we are to start our Tribonacci sequence with [1, 1, 1] as a starting input (AKA signature), we have this sequence',
-      id: 23000005,
-    },
-    {
-      title: 'Task 4',
-      description:
-        'Well met with Fibonacci bigger brother, AKA Tribonacci.\n' +
-        '\n' +
-        "As the name may already reveal, it works basically like a Fibonacci, but summing the last 3 (instead of 2) numbers of the sequence to generate the next. And, worse part of it, regrettably I won't get to hear non-native Italian speakers trying to pronounce it :(\n" +
-        '\n' +
-        'So, if we are to start our Tribonacci sequence with [1, 1, 1] as a starting input (AKA signature), we have this sequence',
-      id: 23000005,
-    },
-    {
-      title: 'Task 4',
-      description:
-        'Well met with Fibonacci bigger brother, AKA Tribonacci.\n' +
-        '\n' +
-        "As the name may already reveal, it works basically like a Fibonacci, but summing the last 3 (instead of 2) numbers of the sequence to generate the next. And, worse part of it, regrettably I won't get to hear non-native Italian speakers trying to pronounce it :(\n" +
-        '\n' +
-        'So, if we are to start our Tribonacci sequence with [1, 1, 1] as a starting input (AKA signature), we have this sequence',
-      id: 23000005,
-    },
-    {
-      title: 'Task 4',
-      description:
-        'Well met with Fibonacci bigger brother, AKA Tribonacci.\n' +
-        '\n' +
-        "As the name may already reveal, it works basically like a Fibonacci, but summing the last 3 (instead of 2) numbers of the sequence to generate the next. And, worse part of it, regrettably I won't get to hear non-native Italian speakers trying to pronounce it :(\n" +
-        '\n' +
-        'So, if we are to start our Tribonacci sequence with [1, 1, 1] as a starting input (AKA signature), we have this sequence',
-      id: 23000005,
-    },
-    {
-      title: 'Task 4',
-      description:
-        'Well met with Fibonacci bigger brother, AKA Tribonacci.\n' +
-        '\n' +
-        "As the name may already reveal, it works basically like a Fibonacci, but summing the last 3 (instead of 2) numbers of the sequence to generate the next. And, worse part of it, regrettably I won't get to hear non-native Italian speakers trying to pronounce it :(\n" +
-        '\n' +
-        'So, if we are to start our Tribonacci sequence with [1, 1, 1] as a starting input (AKA signature), we have this sequence',
-      id: 23000005,
-    },
-    {
-      title: 'Task 4',
-      description:
-        'Well met with Fibonacci bigger brother, AKA Tribonacci.\n' +
-        '\n' +
-        "As the name may already reveal, it works basically like a Fibonacci, but summing the last 3 (instead of 2) numbers of the sequence to generate the next. And, worse part of it, regrettably I won't get to hear non-native Italian speakers trying to pronounce it :(\n" +
-        '\n' +
-        'So, if we are to start our Tribonacci sequence with [1, 1, 1] as a starting input (AKA signature), we have this sequence',
-      id: 23000005,
+        'Последовательность состоит из натуральных чисел и завершается числом 0. Определите значение наибольшего элемента последовательности.',
+      id: 23000045,
     },
   ],
   currentTask: 0,
