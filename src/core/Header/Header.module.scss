@@ -9,7 +9,8 @@
 
 .container {
   height: 100%;
-  margin: auto 16px;
+  margin: auto;
+  padding: 0 16px;
   max-width: 1200px;
   display: flex;
   justify-content: space-between;
