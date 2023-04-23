@@ -4,10 +4,10 @@ import * as yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
 
 import Button from '@mui/joy/Button';
-
 import FormControl from '@mui/joy/FormControl';
 import FormLabel from '@mui/joy/FormLabel';
 import Input from '@mui/joy/Input';
+
 import s from './Login.module.scss';
 
 interface IFormData {
