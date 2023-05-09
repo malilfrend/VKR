@@ -1,16 +1,20 @@
-$back-ground-color: rgb(233, 233, 233);
-$back-ground-color-second: rgb(199, 199, 199);
+$back-ground-color: white;
+$back-ground-color-second: rgb(240, 240, 240);
 $text-color: black;
-$hover-color: azure;
-$active-color: lightblue;
+$hover-color: white;
+$active-color: white;
 
 @mixin nav-link {
-  padding: 5px;
+  padding: 10px;
   transition: all .3s;
   border-radius: 5px;
+  border: 1px solid;
 
   &:hover {
+    box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
     background-color: $hover-color;
+    border-bottom: 1px solid $text-color;
+    transition: all .2s;
   }
 }
 
