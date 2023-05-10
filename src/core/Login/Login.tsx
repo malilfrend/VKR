@@ -62,7 +62,7 @@ export const Login = () => {
                 className={s.input}
                 onChange={onChange}
                 value={value}
-                error={Boolean(errors.login?.message)}
+                error
               />
             </FormControl>
           )}
@@ -79,11 +79,12 @@ export const Login = () => {
                 className={s.input}
                 onChange={onChange}
                 value={value}
-                error={Boolean(errors.password?.message)}
+                error
               />
             </FormControl>
           )}
         />
+        {errors && <div className={s.error}>Что-то пошло не так, попробуйте снова...</div>}
         <Button variant="soft" type="submit">
           Войти
         </Button>
