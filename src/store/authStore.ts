@@ -8,7 +8,7 @@ interface IAuthStore {
 }
 export const useAuthStore = create<IAuthStore>((set, get) => ({
   isAuth: false,
-  name: 'student',
-  lastName: 'studentov',
+  name: 'Иван',
+  lastName: 'Иванов',
   group: 9202,
 }));
