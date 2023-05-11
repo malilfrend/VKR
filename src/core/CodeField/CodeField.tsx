@@ -6,21 +6,18 @@ import CodeEditor from '@uiw/react-textarea-code-editor';
 import { useTasksStore } from '../../store/tasksStore';
 
 import s from './CodeField.module.scss';
-import { isCheckCode } from '../../hoc/isCheckCode';
-
-export const CodeField = ({ isPageCheckCode }: { isPageCheckCode: boolean }) => {
+//TODO интеграция логов ошибок с сервера
+export const CodeField = () => {
   const currentTask = useTasksStore((state) => state.getCurrentTask());
   // eslint-disable-next-line no-useless-concat
   const [code, setCode] = useState('def myFunc() {\n' + '  print("Hello world")\n' + '}');
 
   return (
     <div className={s.wrapper}>
-      {!isPageCheckCode && (
-        <div className={s.task}>
-          <h4>{currentTask?.title}</h4>
-          <p>{currentTask?.description}</p>
-        </div>
-      )}
+      <div className={s.task}>
+        <h4>{currentTask?.title}</h4>
+        <p>{currentTask?.description}</p>
+      </div>
       <div className={s.codeEditor}>
         <CodeEditor
           value={code}
@@ -38,8 +35,9 @@ export const CodeField = ({ isPageCheckCode }: { isPageCheckCode: boolean }) => 
         />
         <Button variant="soft">Отправить на проверку</Button>
       </div>
+      <div className={s.resultOfTesting}>
+        <h4>Результат тестирования</h4>
+      </div>
     </div>
   );
 };
-
-export const CodeFieldComp = isCheckCode(CodeField);
