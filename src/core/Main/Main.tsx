@@ -9,6 +9,7 @@ import { useTasksStore } from '../../store/tasksStore';
 
 import s from './Main.module.scss';
 import { Info } from '../Info/Info';
+import { CheckCode } from '../CheckCode/CheckCode';
 
 export const Main = () => {
   const currentTask = useTasksStore((state) => state.currentTask);
@@ -18,7 +19,7 @@ export const Main = () => {
         <Route path="/login" element={<Login />} />
         <Route path="/tasks" element={<TasksPage />} />
         <Route path={`/task/${currentTask}`} element={<CodeFieldComp />} />
-        <Route path="/check_code" element={<CodeFieldComp />} />
+        <Route path="/check_code" element={<CheckCode />} />
         <Route path="/" element={<Info />} />
       </Routes>
     </div>
