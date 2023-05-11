@@ -1,3 +1,5 @@
+@import './../../styles/variables.scss';
+
 .codeEditor {
   display: flex;
   flex-direction: column;
@@ -27,6 +29,6 @@
 }
 
 .resultOfTesting {
-  background-color: aliceblue;
+  background-color: $nice-blue;
   padding: 16px;
 }
