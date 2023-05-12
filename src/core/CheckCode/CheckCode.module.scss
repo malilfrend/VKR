@@ -1,3 +1,5 @@
+@import '../../styles/variables.scss';
+
 .wrapper {
   padding: 24px;
   display: flex;
@@ -6,4 +8,96 @@
 
 .codeEditor {
   margin-bottom: 16px;
+}
+
+.taskWrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-bottom: 24px;
+}
+
+.task {
+  background-color: $nice-blue;
+  align-self: center;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  transition: all .2s;
+
+  &:hover {
+    cursor: pointer;
+    box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+    background-color: $nice-blue-dark;
+  }
+}
+
+.btn {
+  @include on-btn-hover
+}
+
+@keyframes slide-down {
+  from {
+    height: 20px;
+  }
+
+  to {
+    height: 100px;
+  }
+}
+
+@keyframes slide-up {
+  from {
+    height: 100px;
+  }
+
+  to {
+    height: 20px;
+  }
+}
+
+.taskConditions {
+  display: block;
+  grid-column: 1 / 3;
+  height: 100px;
+  background-color: $nice-blue-dark;
+  border-radius: 10px;
+  padding: 16px;
+  animation-name: slide-down;
+  animation-duration: .5s;
+  overflow: hidden;
+
+  &>p {
+    font-weight: 700;
+    margin-bottom: 16px;
+  }
+}
+
+.hide {
+  height: 20px;
+  animation-name: slide-up;
+  animation-duration: .5s;
+}
+
+.resultOfTesting {
+  background-color: $nice-blue;
+  padding: 16px;
+  border-radius: 10px;
+}
+
+.wrap {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.codeWrap {
+  display: flex;
+  flex-direction: column;
+}
+
+.darkBg {
+  background-color: $nice-blue-dark;
 }

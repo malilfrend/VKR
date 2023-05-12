@@ -33,7 +33,9 @@ export const CodeField = () => {
           }}
           data-color-mode="light"
         />
-        <Button variant="soft">Отправить на проверку</Button>
+        <Button variant="soft" className={s.btn}>
+          Отправить на проверку
+        </Button>
       </div>
       <div className={s.resultOfTesting}>
         <h4>Результат тестирования</h4>

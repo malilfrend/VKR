@@ -32,3 +32,7 @@
   background-color: $nice-blue;
   padding: 16px;
 }
+
+.btn {
+  @include on-btn-hover
+}

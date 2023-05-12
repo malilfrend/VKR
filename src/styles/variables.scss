@@ -4,6 +4,14 @@ $text-color: black;
 $hover-color: white;
 $active-color: white;
 $nice-blue: #DDF1FF;
+$nice-blue-dark: #b9e2ff;
+
+@mixin on-hover {
+  box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+  background-color: $hover-color;
+  border-bottom: 1px solid $text-color;
+  transition: all .2s;
+}
 
 @mixin nav-link {
   padding: 10px;
@@ -12,11 +20,19 @@ $nice-blue: #DDF1FF;
   border: 1px solid;
 
   &:hover {
-    box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
-    background-color: $hover-color;
-    border-bottom: 1px solid $text-color;
-    transition: all .2s;
+    @include on-hover
   }
+
+  ;
 }
 
 ;
+
+@mixin on-btn-hover {
+  transition: all .2s;
+
+  &:hover {
+    transition: all .2s;
+    background-color: $nice-blue-dark;
+  }
+}
