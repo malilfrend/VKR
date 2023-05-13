@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 /* eslint-disable jsx-a11y/no-static-element-interactions */
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import CodeEditor from '@uiw/react-textarea-code-editor';
 import { Button } from '@mui/joy';
 
@@ -9,11 +9,14 @@ import s from './CheckCode.module.scss';
 const tasks = [
   {
     name: 'led',
-    condition: 'Управление портами ввода вывода в режиме вывода на примере мигания светодиодами',
+    condition: `Управление портами ввода вывода в режиме вывода на примере мигания светодиодами. \n 
+      Необходимо запрограммировать МК таким образом, чтобы он мог принять последовательность порядковых номеров светодиодов и поочерёдно их зажигать.
+    `,
   },
   {
     name: 'indicators',
-    condition: 'Управление портами ввода вывода в режиме вывода на примере семисегментного индикатора',
+    condition: `Управление портами ввода вывода в режиме вывода на примере семисегментного индикатора.
+    Необходимо написать такую программу, которая будет выводить на индикаторе символ A`,
   },
 ];
 export const CheckCode = () => {
