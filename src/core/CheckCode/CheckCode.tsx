@@ -5,6 +5,7 @@ import CodeEditor from '@uiw/react-textarea-code-editor';
 import { Button } from '@mui/joy';
 
 import s from './CheckCode.module.scss';
+import { SpecialTask } from '../SpecialTask/SpecialTask';
 
 const tasks = [
   {
@@ -22,7 +23,7 @@ const tasks = [
 export const CheckCode = () => {
   const [code, setCode] = useState('');
   const [isHide, setIsHide] = useState(true);
-  const [ledOrIndecator, setLedOrIndicator] = useState('led');
+  const [ledOrIndecator, setLedOrIndicator] = useState('');
   const onTaskClick = (name: string) => {
     setLedOrIndicator(name);
     if (isHide) {
@@ -30,6 +31,7 @@ export const CheckCode = () => {
     }
     if (!isHide && name === ledOrIndecator) {
       setIsHide(true);
+      setLedOrIndicator('');
     }
   };
   return (
@@ -75,6 +77,7 @@ export const CheckCode = () => {
         </div>
         <div className={s.resultOfTesting}>
           <h4>Результат работы программы</h4>
+          {ledOrIndecator === 'led' ? <SpecialTask /> : null}
         </div>
       </div>
     </div>

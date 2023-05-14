@@ -36,3 +36,11 @@ $nice-blue-dark: #b9e2ff;
     background-color: $nice-blue-dark;
   }
 }
+
+@mixin on-green-btn-hover {
+  transition: all .2s;
+
+  &:hover {
+    transition: all .2s;
+  }
+}

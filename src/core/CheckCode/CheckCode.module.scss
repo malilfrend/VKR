@@ -85,6 +85,10 @@
   background-color: $nice-blue;
   padding: 16px;
   border-radius: 10px;
+
+  &>h4 {
+    margin-bottom: 16px;
+  }
 }
 
 .wrap {
