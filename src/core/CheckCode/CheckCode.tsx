@@ -26,13 +26,13 @@ export const CheckCode = () => {
   const [isHide, setIsHide] = useState(true);
   const [ledOrIndicator, setLedOrIndicator] = useState('');
   const onTaskClick = (name: string) => {
-    setLedOrIndicator(name);
-    if (isHide) {
-      setIsHide(false);
-    }
     if (!isHide && name === ledOrIndicator) {
       setIsHide(true);
       setLedOrIndicator('');
+    }
+    if (isHide) {
+      setIsHide(false);
+      setLedOrIndicator(name);
     }
   };
   return (
@@ -52,7 +52,8 @@ export const CheckCode = () => {
         </div>
         <div className={`${s.taskConditions} ${isHide ? s.hide : ''}`}>
           <p>Условие задачи</p>
-          <div>{ledOrIndicator === 'led' ? tasks[0].condition : tasks[1].condition}</div>
+          <div>{ledOrIndicator === 'led' ? tasks[0].condition : null}</div>
+          <div>{ledOrIndicator === 'indicators' ? tasks[1].condition : null}</div>
         </div>
       </div>
       <div className={s.wrap}>
