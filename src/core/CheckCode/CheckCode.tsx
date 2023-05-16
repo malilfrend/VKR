@@ -6,6 +6,7 @@ import { Button } from '@mui/joy';
 
 import s from './CheckCode.module.scss';
 import { SpecialTask } from '../SpecialTask/SpecialTask';
+import { Indicators } from '../Indicators/Indicators';
 
 const tasks = [
   {
@@ -23,13 +24,13 @@ const tasks = [
 export const CheckCode = () => {
   const [code, setCode] = useState('');
   const [isHide, setIsHide] = useState(true);
-  const [ledOrIndecator, setLedOrIndicator] = useState('');
+  const [ledOrIndicator, setLedOrIndicator] = useState('');
   const onTaskClick = (name: string) => {
     setLedOrIndicator(name);
     if (isHide) {
       setIsHide(false);
     }
-    if (!isHide && name === ledOrIndecator) {
+    if (!isHide && name === ledOrIndicator) {
       setIsHide(true);
       setLedOrIndicator('');
     }
@@ -38,20 +39,20 @@ export const CheckCode = () => {
     <div className={s.wrapper}>
       <div className={s.taskWrapper}>
         <div
-          className={`${s.task} ${ledOrIndecator === 'led' && !isHide ? s.darkBg : ''}`}
+          className={`${s.task} ${ledOrIndicator === 'led' && !isHide ? s.darkBg : ''}`}
           onClick={() => onTaskClick('led')}
         >
           Светодиоды
         </div>
         <div
-          className={`${s.task} ${ledOrIndecator === 'indicators' && !isHide ? s.darkBg : ''}`}
+          className={`${s.task} ${ledOrIndicator === 'indicators' && !isHide ? s.darkBg : ''}`}
           onClick={() => onTaskClick('indicators')}
         >
           Семисегментный индикатор
         </div>
         <div className={`${s.taskConditions} ${isHide ? s.hide : ''}`}>
           <p>Условие задачи</p>
-          <div>{ledOrIndecator === 'led' ? tasks[0].condition : tasks[1].condition}</div>
+          <div>{ledOrIndicator === 'led' ? tasks[0].condition : tasks[1].condition}</div>
         </div>
       </div>
       <div className={s.wrap}>
@@ -77,7 +78,8 @@ export const CheckCode = () => {
         </div>
         <div className={s.resultOfTesting}>
           <h4>Результат работы программы</h4>
-          {ledOrIndecator === 'led' ? <SpecialTask /> : null}
+          {ledOrIndicator === 'led' ? <SpecialTask /> : null}
+          {ledOrIndicator === 'indicators' ? <Indicators /> : null}
         </div>
       </div>
     </div>

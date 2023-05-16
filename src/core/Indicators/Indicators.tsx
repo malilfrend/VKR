@@ -1,29 +1,28 @@
 import React, { useState } from 'react';
 import { Button } from '@mui/joy';
-import s from './SpecialTask.module.scss';
+import s from './Indicators.module.scss';
 
-const ledsOrder = [2, 1, 7, 5, 6, 3, 8, 4];
-// const ledsOrder = [1, 2, 3, 4, 5, 6, 7, 8];
-const leds = [1, 2, 3, 4, 5, 6, 7, 8];
+const indicators = [1, 2, 3, 4, 5, 6, 7];
+const indicatorsOrder = [2, 4, 1, 3, 5, 7, 6];
 
-export const SpecialTask = () => {
-  const [currentLed, setCurrentLed] = useState(0);
+export const Indicators = () => {
+  const [currentIndicator, setCurrentIndicator] = useState(0);
   // eslint-disable-next-line consistent-return
   const setNewLed = (order: number[], i = 0) => {
     if (order.length === i) {
       return null;
     }
-    setCurrentLed(order[i]);
+    setCurrentIndicator(order[i]);
     setTimeout(() => {
       setNewLed(order, i + 1);
     }, 1000);
   };
   return (
     <div className={s.wrapper}>
-      <div className={s.led_group}>
-        {leds.map((led) => (
-          <div className={`${s.led} ${currentLed === led ? s.active : ''}`} key={led}>
-            {led}
+      <div className={s.indicatorsGroup}>
+        {indicators.map((indicator) => (
+          <div className={`${s.indicator} ${currentIndicator === indicator ? s.active : ''}`} key={indicator}>
+            {indicator}
           </div>
         ))}
       </div>
@@ -33,7 +32,7 @@ export const SpecialTask = () => {
         type="button"
         color="success"
         onClick={() => {
-          setNewLed(ledsOrder);
+          setNewLed(indicatorsOrder);
         }}
       >
         Пуск
