@@ -30,6 +30,9 @@ export const CheckCode = () => {
       setIsHide(true);
       setLedOrIndicator('');
     }
+    if (!isHide && name !== ledOrIndicator) {
+      setLedOrIndicator(name);
+    }
     if (isHide) {
       setIsHide(false);
       setLedOrIndicator(name);
