@@ -24,6 +24,7 @@
   justify-content: center;
   align-items: center;
   border-radius: 10px;
+  transition: all 0.3s;
 
   &:nth-child(1) {
     grid-column: 2 / 3;
@@ -101,8 +102,8 @@
 }
 
 .active {
-  animation-name: ligth-up;
-  animation-duration: 1s;
+  transition: all .3s;
+  background-color: rgb(5, 255, 5);
 }
 
 .btn {
