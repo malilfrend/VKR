@@ -2,16 +2,16 @@ import React, { useState } from 'react';
 import { Button } from '@mui/joy';
 import s from './Indicators.module.scss';
 
-const indicators = [1, 2, 3, 4, 5, 6, 7];
+const indicators = ['a', 'f', 'b', 'g', 'e', 'c', 'd'];
 
 const indicatorsMap = new Map([
-  [1, true],
-  [2, true],
-  [3, true],
-  [4, true],
-  [5, true],
-  [6, true],
-  [7, false],
+  ['a', true],
+  ['b', true],
+  ['c', true],
+  ['d', false],
+  ['e', true],
+  ['f', true],
+  ['g', true],
 ]);
 
 export const Indicators = () => {
