@@ -2,12 +2,11 @@ import React, { useState } from 'react';
 import { Button } from '@mui/joy';
 import s from './SpecialTask.module.scss';
 
-const ledsOrder = [2, 1, 7, 5, 6, 3, 8, 4];
-// const ledsOrder = [1, 2, 3, 4, 5, 6, 7, 8];
-const leds = [1, 2, 3, 4, 5, 6, 7, 8];
+const ledsOrder = [0, 1, 2, 3, 4, 5, 6, 7, 6, 5, 4, 3, 2, 1, 0];
+const leds = [0, 1, 2, 3, 4, 5, 6, 7];
 
 export const SpecialTask = () => {
-  const [currentLed, setCurrentLed] = useState(0);
+  const [currentLed, setCurrentLed] = useState(-1);
   // eslint-disable-next-line consistent-return
   const setNewLed = (order: number[], i = 0) => {
     if (order.length === i) {
